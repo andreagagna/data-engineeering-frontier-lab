@@ -8,12 +8,12 @@
 
 ## Phase 1 — Bootstrap production Python foundation
 
-- [ ] P0: Create package skeleton under `src/energy_flex_pipeline/`.
-- [ ] P0: Add `pyproject.toml` with `uv`, `pytest`, `ruff`, `mypy`, `pydantic`.
+- [x] P0: Create package skeleton under `src/energy_flex_pipeline/`.
+- [x] P0: Add `pyproject.toml` with `uv`, `pytest`, `ruff`, `mypy`, `pydantic`.
 - [ ] P0: Add deterministic synthetic data generator.
 - [ ] P0: Define event schemas with Pydantic.
 - [ ] P0: Add structured logging helper.
-- [ ] P0: Add config model and local settings pattern.
+- [x] P0: Add config model and local settings pattern.
 - [ ] P0: Add initial pytest tests for schemas and deterministic generation.
 - [ ] P1: Add CLI entry point.
 

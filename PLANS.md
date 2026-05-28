@@ -132,3 +132,54 @@ Expected:
 - package imports cleanly;
 - sample generator can create a tiny local dataset;
 - generated data is not committed except small fixtures if needed.
+
+## Current working plan
+
+# Plan: Timestamp helpers
+
+## Goal
+
+Create the shared timestamp policy helpers before implementing event schemas.
+
+## Scope
+
+In scope:
+
+- `domain` package;
+- UTC normalization helper;
+- ISO timestamp parsing helper;
+- current UTC timestamp helper;
+- tests for naive timestamp rejection and UTC conversion.
+
+Out of scope:
+
+- schemas;
+- synthetic generators;
+- CLI;
+- logging setup;
+- file IO;
+- generated data.
+
+## Steps
+
+1. Add tests that describe the expected timestamp behavior.
+2. Run tests and confirm they fail for the missing implementation.
+3. Implement the smallest `domain/time.py` helper module.
+4. Run tests, lint, and type checks where available.
+
+## Verification
+
+Run:
+
+```bash
+uv run pytest
+uv run ruff check .
+uv run mypy src
+```
+
+Expected:
+
+- timezone-aware UTC datetimes remain UTC;
+- timezone-aware non-UTC datetimes are normalized to UTC;
+- naive datetimes and naive timestamp strings are rejected;
+- `utc_now` returns a timezone-aware UTC datetime.
